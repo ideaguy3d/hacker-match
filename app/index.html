@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" ng-app="edhubJobsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Hacker Match</title>
+
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="description" content="Hacker Match">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="Julius Hernandez Alvarado">
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css"/>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/edhub.css">
+    <!-- endbuild -->
+
+    <!-- ng-cloak -->
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body ng-controller="CoreCtrl">
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">
+    upgrade your browser</ato improve your experience.</p>
+<![endif]-->
+
+
+<!-- START:  Hero Landing -->
+<section layout-padding class="edhub-landing-hero edhub-overflow-hidden">
+    <div class="edhub-landing-hero-text">
+        <h1>Hacker Match</h1>
+        <p style="background-color: rgba(0,0,0,0.4)">
+            <small>
+                Get matched with other Hackers for Side Projects and Hack a thons
+            </small>
+        </p>
+    </div>
+</section>
+<!-- END OF: Hero Landing -->
+
+<!-- footer -->
+<div layout="row" layout-gt-sm="column" layout-align="center center" style="background-color: whitesmoke;">
+    <div flex layout-margin layout-padding>
+        <h4>&copy; 2019 Julius Alvarado</h4>
+        <h4>github.com/ideaguy3d</h4>
+        <h4>valleyhackathon.com</h4>
+    </div>
+</div>
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-md5/angular-md5.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="app.js"></script>
+<!-- factories & services -->
+<script src="services/ser.auth.js"></script>
+<script src="services/ser.job.post.js"></script>
+<script src="services/ser.org.list.js"></script>
+<!-- controllers -->
+<script src="core.ctrl.js"></script>
+<script src="states/landing/ctrl.landing.js"></script>
+<script src="states/auth/ctrl.auth.js"></script>
+<script src="states/post/ctrl.post.js"></script>
+<script src="states/lab916/ctrl.lab916.js"></script>
+<script src="states/apply/ctrl.job.apply.js"></script>
+<script src="states/apply/ctrl.org.apply.js"></script>
+<script src="states/org-apps/ctrl.org-apps.js"></script>
+<script src="states/julius/ctrl.julius.js"></script>
+<!-- prac stuff -->
+<script src="ui-prac/ctrl.ui.prac.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
