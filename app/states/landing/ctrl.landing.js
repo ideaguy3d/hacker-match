@@ -5,7 +5,8 @@
 (function () {
     "use strict";
 
-    angular.module('edhubJobsApp').controller('LandingCtrl', ['edhubJobPostService', '$location',
+    angular.module('edhubJobsApp').controller('LandingCtrl', [
+        'edhubJobPostService', '$location',
         'smoothScroll', 'eOrgListFact', '$rootScope',
         LandingClass
     ]);

@@ -13,6 +13,7 @@
 
     function CoreClass($rootScope, $scope, $mdSidenav, $mdDialog, $timeout, edhubAuthService, $location) {
         $scope.ccCurrentUser = "";
+        $scope.ccAppName = "Hacker Match";
         $scope.coreEdhubHorizontalState = false;
         $scope.ccAuthBoxHidden = false;
         $scope.ccAuthBoxIsOpen = false;
@@ -25,6 +26,9 @@
             editProfile: "Edit Profile",
             applications: "Applications"
         };
+        $scope.techSkills = [
+            
+        ];
 
         $scope.ccSetCurrentUser = function (userEmail) {
             $scope.ccCurrentUser = userEmail;
