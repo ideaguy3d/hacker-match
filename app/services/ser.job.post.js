@@ -5,8 +5,9 @@
 (function () {
     "use strict";
 
-    angular.module('edhubJobsApp').factory('edhubJobPostService', ['$firebaseArray',
-        'edhubAuthService', EdhubJobPostClass
+    angular.module('edhubJobsApp').factory('edhubJobPostService', [
+        '$firebaseArray', 'edhubAuthService',
+        EdhubJobPostClass
     ]);
 
     function EdhubJobPostClass($firebaseArray, edhubAuthService) {
