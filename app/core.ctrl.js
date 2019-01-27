@@ -26,8 +26,12 @@
             editProfile: "Edit Profile",
             applications: "Applications"
         };
-        $scope.techSkills = [
-            
+
+        $scope.ccTechSkills = [
+            'PHP', 'Python', 'Computer Science',
+            'C++', 'C#', 'Java', 'JavaScript', 'Angular',
+            'React', 'ES2015', 'Node.js', 'Ruby', 'Mobile Development',
+            'R', 'MySQL', 'PostgresQL', 'MongoDB', 'Firebase', 'Design'
         ];
 
         $scope.ccSetCurrentUser = function (userEmail) {

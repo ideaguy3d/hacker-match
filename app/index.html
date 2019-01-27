@@ -45,6 +45,14 @@
     <p style="background-color: rgba(0,0,0,0.4)" class="edhub-text-center">
         Choose your Top 3 favorite tech AND OR strongest skills
     </p>
+
+    <section layout="row" layout-sm="column" layout-align="center center"
+             layout-wrap>
+        <div ng-repeat="tech in ccTechSkills">
+            <md-button class="md-raised md-primary">{{tech}}</md-button>
+        </div>
+
+    </section>
 </section>
 <!-- END OF: Hero Landing -->
 
