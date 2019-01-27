@@ -50,6 +50,11 @@
             }
         };
 
+        $scope.ccGoToMatches = function () {
+            var elem = document.getElementById("hm-valley-hack-a-thon-matches");
+            smoothScroll(elem);
+        };
+
         $scope.ccSetCurrentUser = function (userEmail) {
             $scope.ccCurrentUser = userEmail;
         };
