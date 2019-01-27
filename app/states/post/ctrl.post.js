@@ -7,7 +7,8 @@
     "use strict";
 
 
-    angular.module('edhubJobsApp').controller('PostCtrl', ['$rootScope', 'edhubJobPostService',
+    angular.module('edhubJobsApp').controller('PostCtrl', [
+        '$rootScope', 'edhubJobPostService',
         '$location', 'edhubAuthService', 'eOrgListFact',
         PostClass
     ]);

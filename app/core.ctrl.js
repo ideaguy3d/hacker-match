@@ -6,18 +6,19 @@
     "use strict";
 
     angular.module('edhubJobsApp').controller('CoreCtrl', [
-        '$rootScope', '$scope', '$mdSidenav',
+        '$rootScope', '$scope', '$mdSidenav', 'smoothScroll',
         '$mdDialog', '$timeout', 'edhubAuthService', '$location',
         CoreClass
     ]);
 
-    function CoreClass($rootScope, $scope, $mdSidenav, $mdDialog, $timeout, edhubAuthService, $location) {
+    function CoreClass($rootScope, $scope, $mdSidenav, smoothScroll, $mdDialog, $timeout, edhubAuthService, $location) {
         $scope.ccCurrentUser = "";
         $scope.ccAppName = "Hacker Match";
         $scope.coreEdhubHorizontalState = false;
         $scope.ccAuthBoxHidden = false;
         $scope.ccAuthBoxIsOpen = false;
         $scope.ccAuthBoxHover = true;
+        $scope.ccShowMatchBtn = false;
         $scope.coreEdhubToggleSideNav = coreEdhubToggleSideNav('core-sidenav');
         const enumAuthBox = {
             loginSignup: "Login/Signup",
@@ -27,12 +28,27 @@
             applications: "Applications"
         };
 
+        var skillCount = 0;
         $scope.ccTechSkills = [
             'PHP', 'Python', 'Computer Science',
             'C++', 'C#', 'Java', 'JavaScript', 'Angular',
             'React', 'ES2015', 'Node.js', 'Ruby', 'Mobile Development',
             'R', 'MySQL', 'PostgresQL', 'MongoDB', 'Firebase', 'Design'
         ];
+
+        $scope.ccSkillsPicked = '';
+
+        $scope.ccSkillClicked = function (skill) {
+            skillCount++;
+
+            if (skillCount <= 3) {
+                $scope.ccSkillsPicked += (skill + ', ');
+            }
+
+            if (skillCount >= 3) {
+                $scope.ccShowMatchBtn = true;
+            }
+        };
 
         $scope.ccSetCurrentUser = function (userEmail) {
             $scope.ccCurrentUser = userEmail;
@@ -120,7 +136,7 @@
             });
         };
 
-        $rootScope.$on("edhub-event-auth-user", function(e, args){
+        $rootScope.$on("edhub-event-auth-user", function (e, args) {
             $scope.ccItems[0].name = _determineAuthState();
         });
 

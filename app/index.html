@@ -43,15 +43,24 @@
     </div>
 
     <p style="background-color: rgba(0,0,0,0.4)" class="edhub-text-center">
-        Choose your Top 3 favorite tech AND OR strongest skills
+        Choose your <b><u>Top 3</u></b> favorite tech AND OR strongest skills
     </p>
+
+    <div layout="column" layout-align="center center">
+        <p>3 Skills Chosen = {{ccSkillsPicked}}</p>
+        <md-button ng-if="ccShowMatchBtn" class="md-raised" ng-click="ccGoToMatches()">
+            See Matches
+        </md-button>
+    </div>
 
     <section layout="row" layout-sm="column" layout-align="center center"
              layout-wrap>
         <div ng-repeat="tech in ccTechSkills">
-            <md-button class="md-raised md-primary">{{tech}}</md-button>
+            <md-button class="md-raised md-primary"
+                ng-click="ccSkillClicked(tech)">
+                {{tech}}
+            </md-button>
         </div>
-
     </section>
 </section>
 <!-- END OF: Hero Landing -->
