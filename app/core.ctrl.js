@@ -52,10 +52,12 @@
                 $scope.ccSkillsPicked += (skill + ', ');
                 $scope.ccUserSkills.skills += (skill + ', ');
                 //TODO: remove the orphan ',' at end
-                hmatchService.addUserSkill($scope.ccUserSkills).then(function (res) {
+                var userSkill = $scope.ccUserSkills;
+                hmatchService.addUserSkill(userSkill).then(function (res) {
                     console.log("__>> HMATCTCH - response from adding user skill, ", res);
                 }).catch(function (err) {
-                    console.log("__>> hMATCH - error = ", err);
+                    console.log("__>> hMATCH - error = ");
+                    console.log(err);
                 });
             }
 

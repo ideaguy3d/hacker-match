@@ -24,14 +24,6 @@
         }
 
         function listOrganization(orgData, orgId) {
-            /* - old attempt to signup from with in this factory rather than from the controllers
-             var signupInfo = {
-                email: orgData.email,
-                pw: orgData.pw ? orgData.pw : null
-            };
-            var orgId = edhubAuthService.signup(signupInfo);
-            */
-
             // TODO: seriously figure out / practice correctly returning this
             return $firebaseArray(refJobPostings.child(orgId)).$add(orgData).then(function (ref) {
                 return ref;

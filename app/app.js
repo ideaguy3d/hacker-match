@@ -12,17 +12,17 @@ angular
         'smoothScroll'
     ])
     .config(['$routeProvider', '$locationProvider',
-        function ($routeProvider) {
-
+        function ($routeProvider, $locationProvider) {
             // Initialize Firebase
-            const config = {
-                apiKey: "AIzaSyDEyWzMw0NPhKUnjWTNsYeqAWazk5cR_LI",
-                authDomain: "edhub-jobs.firebaseapp.com",
-                databaseURL: "https://edhub-jobs.firebaseio.com",
-                projectId: "edhub-jobs",
-                storageBucket: "edhub-jobs.appspot.com",
-                messagingSenderId: "743478741402"
+            var config = {
+                apiKey: "AIzaSyDm9xGbvRpbDtoCjjVwTnpulaoqBGdCagY",
+                authDomain: "hacker-match.firebaseapp.com",
+                databaseURL: "https://hacker-match.firebaseio.com",
+                projectId: "hacker-match",
+                storageBucket: "hacker-match.appspot.com",
+                messagingSenderId: "791566696878"
             };
+
             firebase.initializeApp(config);
         }
     ]);
