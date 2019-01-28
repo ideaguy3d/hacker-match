@@ -8,10 +8,12 @@
     angular.module('edhubJobsApp').controller('CoreCtrl', [
         '$rootScope', '$scope', '$mdSidenav', 'smoothScroll',
         '$mdDialog', '$timeout', 'edhubAuthService', '$location',
+        'hmatchService',
         CoreClass
     ]);
 
-    function CoreClass($rootScope, $scope, $mdSidenav, smoothScroll, $mdDialog, $timeout, edhubAuthService, $location) {
+    function CoreClass($rootScope, $scope, $mdSidenav, smoothScroll,
+                       $mdDialog, $timeout, edhubAuthService, $location, hmatchService) {
         $scope.ccCurrentUser = "";
         $scope.ccAppName = "Hacker Match";
         $scope.coreEdhubHorizontalState = false;
@@ -36,6 +38,11 @@
             'R', 'MySQL', 'PostgresQL', 'MongoDB', 'Firebase', 'Design'
         ];
 
+        $scope.ccUserSkills = {
+            username: '',
+            skills: ''
+        };
+
         $scope.ccSkillsPicked = '';
 
         $scope.ccSkillClicked = function (skill) {
@@ -43,6 +50,13 @@
 
             if (skillCount <= 3) {
                 $scope.ccSkillsPicked += (skill + ', ');
+                $scope.ccUserSkills.skills += (skill + ', ');
+                //TODO: remove the orphan ',' at end
+                hmatchService.addUserSkill($scope.ccUserSkills).then(function (res) {
+                    console.log("__>> HMATCTCH - response from adding user skill, ", res);
+                }).catch(function (err) {
+                    console.log("__>> hMATCH - error = ", err);
+                });
             }
 
             if (skillCount >= 3) {

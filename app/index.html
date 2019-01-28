@@ -11,8 +11,8 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
-    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -53,10 +53,19 @@
         </md-button>
     </div>
 
+    <form name="hmatchUsernameInput">
+        <md-input-container class="md-icon-float md-block" flex-gt-sm>
+            <label for="hmatch-username" style="color: #f5f5f5">Username</label>
+            <input id="hmatch-username" name="hmatchUsername" type="text" ng-model="ccUserSkills.username" ng-required>
+            <div ng-messages="hmatchUsernameInput.hmatchUsername.$error">
+                <div ng-message="required">Username is required</div>
+            </div>
+        </md-input-container>
+    </form>
+
     <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
         <div ng-repeat="tech in ccTechSkills">
-            <md-button class="md-raised md-primary"
-                ng-click="ccSkillClicked(tech)">
+            <md-button class="md-raised md-primary" ng-click="ccSkillClicked(tech)">
                 {{tech}}
             </md-button>
         </div>
@@ -105,6 +114,7 @@
 <script src="services/ser.auth.js"></script>
 <script src="services/ser.job.post.js"></script>
 <script src="services/ser.org.list.js"></script>
+<script src="services/ser.hacker-match.js"></script>
 <!-- controllers -->
 <script src="core.ctrl.js"></script>
 <script src="states/landing/ctrl.landing.js"></script>
